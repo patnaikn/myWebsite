@@ -22,7 +22,7 @@
   bottom:0;
   .header{
       display: grid;
-      grid-template-columns: 1fr [navItem]1fr [mediaLinks]1fr;
+      grid-template-columns: 1fr [navItem]1fr [mediaLinks]1fr 20px;
       padding: 5px;
     .headerNav{
         display: grid;
@@ -30,13 +30,13 @@
         ul{
             display: grid;
             grid-template-columns: repeat(3,1fr);
-            grid-column-gap: 80px;
+            grid-column-gap: 70px;
             align-self: center;
             justify-self: center;
             padding: 0;
             margin: 0;
             li{
-                display: inline-block; 
+                display: inline-block;
                 a{
                     text-decoration: none;
                     font-weight: bold;
@@ -44,23 +44,100 @@
                 }
             }
         }
-    
+
     }
     .mediaLinks{
         grid-column: mediaLinks;
         align-self: center;
         justify-self: center;
+      ul{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-column-gap: 15px;
+        align-self: center;
+        justify-self: center;
+        padding: 0;
+        margin: 0;
+        li{
+          display: inline-block;
+          a{
+            //text-decoration: none;
+            //font-weight: bold;
+            //color: #EBEFF1;
+          }
+        }
+      }
     }
   }
 }
 
-#text {
-    z-index: 100;
-    position: fixed;
-    color: #E3F2FD;
-    font-size: 24px;
-    font-weight: bold;
-    left: 150px;
-    top: 350px;
-    
+#text1 {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+  font: 80px 'ChunkFiveRegular';
   }
+.fa{
+  color: #fff;
+}
+i {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+div.login{
+  margin-left: -80px;
+  align-self: center;
+  justify-self: center;
+
+}
+/* MODAL STYLES
+-------------------------------*/
+modal {
+  /* modals are hidden by default */
+  display: none;
+
+  .modal {
+    /* modal container fixed across whole screen */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* z-index must be higher than .modal-background */
+    z-index: 1000;
+
+    /* enables scrolling for tall modals */
+    overflow: auto;
+
+    .modal-body {
+      padding: 20px;
+      background: #fff;
+
+      /* margin exposes part of the modal background */
+      margin: 40px;
+    }
+  }
+
+  .modal-background {
+    /* modal background fixed across whole screen */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* semi-transparent black  */
+    background-color: #000;
+    opacity: 0.75;
+
+    /* z-index must be below .modal and above everything else  */
+    z-index: 900;
+  }
+}
+
+body.modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
+}
+

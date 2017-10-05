@@ -2,16 +2,39 @@
   <header class="header">
     <nav class="headerNav">
       <ul>
-        <li><a href='#'>About Us</a></li>
-        <li><a href='#'>Themes</a></li>
-        <li><a href='#'>Contact Us</a></li>
+        <li><i class="fa fa-user-circle fa-1x" aria-hidden="true"> </i><a href='#'>About Us</a></li>
+        <li><i class="fa fa-paint-brush fa-1x" aria-hidden="true"> </i><a href='#'>Themes</a></li>
+        <li><i class="fa fa-handshake-o fa-1x" aria-hidden="true"> </i><a href='#'>Contact Us</a></li>
       </ul>
     </nav>
-    <div class="mediaLinks">Media Links</div>
+    <div class="mediaLinks">
+      <ul>
+        <li><a href='#'><i class="fa fa-facebook-square fa-1x" aria-hidden="true"> </i></a></li>
+        <li><a href='#'><i class="fa fa-google-plus-square fa-1x" aria-hidden="true"> </i></a></li>
+        <li><a href='#'><i class="fa fa-twitter-square fa-1x" aria-hidden="true"> </i></a></li>
+      </ul>
+    </div>
+    <div class="login">
+      <button type="button" class="btn btn-default" (click)="openModal('custom-modal-1')">Login</button>
+    </div>
+    <modal id="custom-modal-1">
+      <div class="modal">
+        <div class="modal-body">
+          <h1>A Custom Modal!</h1>
+          <p>
+            <!--Home page text: <input type="text" [(ngModel)]="bodyText" />-->
+            Home page text: <input type="text"/>
+          </p>
+          <button (click)="closeModal('custom-modal-1');">Close</button>
+        </div>
+      </div>
+      <div class="modal-background"></div>
+    </modal>
   </header>
  <div class="content">
-    <h1 id="text">
-       Welcome To My Website 
+    <h1 id="text1">
+       Welcome To My Website
     </h1>
-  </div> 
+  </div>
 </div>
+
